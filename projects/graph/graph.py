@@ -186,7 +186,7 @@ class Graph:
 
         # We only want to do the work on a node/neighbor we haven't visited yet
         if starting_vertex not in visited:
-            # First step is to add it to the visited array so we don't repeat our work
+            # First step is to add it to the visited set so we don't repeat our work
             visited.add(starting_vertex)
             # Copy the path, do not just append!
             path_copy = path.copy()
@@ -201,6 +201,8 @@ class Graph:
                 # Return the path only if we were able to find it
                 if new_path is not None:
                     return new_path
+                    
+            # If nothing is found it will return none by default!
 
 if __name__ == '__main__':
     graph = Graph()  # Instantiate your graph
